@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<!-- JdbcUtil.java에 가서 name 변경하면서 실습 -->
+	<Resource name="jdbc/OracleDB" 
+	   auth="Container"
+	   type="javax.sql.DataSource" 
+	   
+	   username="system" 
+	   password="1234"
+	   driverClassName="oracle.jdbc.driver.OracleDriver"
+	   url="jdbc:oracle:thin:@127.0.0.1:1521:XE"
+	   
+	   factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	   
+	   maxActive="500" 
+	   maxIdle="100"
+	   maxWait="1000"/> 
+	   
+	   <!-- <Resource name="jdbc/MySQLDB" 
+	   auth="Container"
+	   type="javax.sql.DataSource" 
+	   
+	   username="java" 
+	   password="java"
+	   driverClassName="com.mysql.jdbc.Driver"
+	   url="jdbc:mysql://localhost:3306/testDB"
+	   
+	   factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory"
+	   
+	   maxActive="500" 
+	   maxIdle="100" 
+	   maxWait="1000"/> -->
+	   <!-- name으로 '커넥션 풀(DataSource)'에 접근 -->
+	   <!-- Container에서 인증하겠다. -->
+	   <!-- DataSource객체의 getConnection()사용해 Connection객체를 얻을 수 있다. -->
+	   <!-- MySQL DB에 연결할 수 있는 설정 정보-4가지
+	        username,password,driverClassName,url -->
+	   <!-- Factory : 연결할 DB종류에 따른 커넥션 풀인 DataSource객체를 생성해주는 클래스이름-->     
+	   <!-- 동시에 DB에 연결가능한 최대 Connection수 -->
+	   <!-- 동시에 idle상태로 대기할 수 있는 최대수 -->
+	   <!-- 새로운 연결이 생길때까지 기다릴 수 있는 최대시간 
+	   (예)500개 다 사용중이면 501 생성까지 기다릴 수 있는 최대시간 (1/1000초=0.001초)-->
+</Context>
